@@ -38,7 +38,7 @@ def waitConfirm():
 	if isConfirmed == 'Y' or isConfirmed == 'y':
 		return True
 	elif isConfirmed == 'N' or isConfirmed == 'n':
-		enterOption()
+		return chooseOption()
 	else:
 		return waitConfirm()
 
