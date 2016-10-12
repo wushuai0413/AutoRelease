@@ -2,6 +2,7 @@ import os
 import time
 import pickle
 
+print 23
 def readConfiguration():	
         global PROJECT_PATH
         global PROJECT_NAME
