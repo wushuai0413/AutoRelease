@@ -45,7 +45,6 @@ def waitConfirm():
 def createFolder(targetName):	
 	d = time.ctime().split(' ')
 	curTime = d[3]
-	print d
 	dirStr = '%s/%s%s' %(TARGET_FOLDERPATH,targetName,curTime)
 	os.system('mkdir %s' %(dirStr))
 	return dirStr
@@ -68,7 +67,6 @@ def release():
 		buildStr = 'xcodebuild -workspace %s/%s.xcworkspace -sdk iphoneos  -scheme "%s" -configuration "%s" CONFIGURATION_BUILD_DIR="%s"' %(PROJECT_PATH,PROJECT_NAME,TARGET_NAME,RELEASE_TYPE,tempDirPath)
 	else:
 		buildStr = 'xcodebuild -project %s/%s.xcodeproj -sdk iphoneos  -scheme "%s" -configuration "%s" CONFIGURATION_BUILD_DIR="%s"' %(PROJECT_PATH,PROJECT_NAME,TARGET_NAME,RELEASE_TYPE,tempDirPath)
-	print 'buildStr ========= %s' %(buildStr)
         os.system(buildStr)
 
         folderStr = createFolder(TARGET_NAME)
